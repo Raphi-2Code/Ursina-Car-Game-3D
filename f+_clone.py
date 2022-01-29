@@ -9,8 +9,6 @@ player.gravity=0
 def Winner():
     Text('You win!',background=True)
     player.speed=0
-def Introductions():
-    Entity(model='quad', texture='GOALtoWIN.png')
 ground=Entity(model='plane',texture='Road1sP',collider='box',scale=(100,1,100),position=(5, 1, 2))
 Block1=Entity(model='cube',color=color.red,collider='box',scale=(20,7,20),position=(27.3, 0, -3))
 Block2=Entity(model='cube',color=color.red,collider='box',scale=(10,7,20),position=(25, 0, -20.3357))
@@ -28,8 +26,4 @@ wall4=duplicate(wall3,x=50)
 goal=Entity(model='cube',collider='box',scale=(11,5,1),color=color.white,position=(10,0,11))
 z=Entity(model='cube',collider='box',scale=(1,5,1),color=color.white,position=(4,0,10))
 k=Entity(model='cube',collider='box',scale=(11,5,1),color=color.white,position=(10,0,12), on_click=Winner)
-#e=Winner if distance(player, k) < k.scale_x / 2 else None
-
-b1=Text("Introductions",)
-#b1.on_click=Introductions
 game.run()
