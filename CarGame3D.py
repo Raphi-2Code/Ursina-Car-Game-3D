@@ -1,7 +1,12 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import *
 app=Ursina()
-player=FirstPersonController()
+player=FirstPersonController(model='cube', texture="car2.png", scale_y=0.1)
+player.scale=7
+camera.scale=0
+camera.y=1/7*3.5*-1
+#camera.y=1
+camera.scale=0
 player.position=(-10, 0, -35)
 player.speed=30
 player.gravity=0
@@ -697,4 +702,7 @@ def update():
 Entity(model='cube',position=(-7,0,-35),scale=(1,10,11),texture='grass',collider='cube')
 Entity(model='cube',position=(-4,0,-35),scale=(0.5,5,0.5),texture='grass',color=color.black,collider='cube',on_click=YouWon)
 Entity(model='sphere',position=(-4,2.5,-35),scale=(0.5,0.5,0.5),texture='grass',color=color.red,collider='cube',on_click=YouWon)
+Entity(model='cube',position=(-5,5,-35),scale=(3,1,5),texture='grass',color=color.black,collider='cube')
+#car=Entity(model='plane', texture="car2.png", scale=7)
+#car.add_script(SmoothFollow(player, offset=[0,0,7]))
 app.run()
